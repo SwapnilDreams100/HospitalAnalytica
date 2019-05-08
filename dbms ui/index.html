@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hospital Stats DashB0ard</title>
+	<script src="js/canvasjs.min.js"></script>
+  
+  <script src="js/bar_chart.js"></script>
+  <script src="js/line_chart.js"></script>
+  <script src="js/pie_chart.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
+  <script src="js/map.js"></script>
+
+  <script src="js/request.js"></script>
+
+	<link rel="stylesheet" href="js/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+
+	<style type="text/css">
+            
+            .div_spacing{
+                margin-bottom: 200px;
+            }
+            .button1 {
+                background-color: white; 
+                color: black; 
+                border-radius: 12px;
+                border: 2px solid #4CAF50;
+                transition-duration: 0.3s;
+            }
+
+            .button1:hover {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            .button2 {
+                background-color: white; 
+                color: black; 
+                border-radius: 12px;
+                border: 2px solid #008CBA;
+                transition-duration: 0.3s;
+            }
+
+            .button2:hover {
+                background-color: #008CBA;
+                color: white;
+            }
+
+            .button3 {
+                background-color: white; 
+                color: black;
+                border-radius: 12px; 
+                border: 2px solid #f44336;
+                transition-duration: 0.3s;
+            }
+
+            .button3:hover {
+                background-color: #f44336;
+                color: white;
+            }
+          			
+			body {
+              font-size: 14px;
+              font-family: 'Open Sans', sans-serif;
+              color: #333;
+              }
+
+        </style>
+    </head>
+<body>
+                <div align="center">
+                   <img style="max-width:3%; max-height:2%;" src="images/analytics.png" /> 
+                   <font size="7" >Hospital Analytics DashBoard</font>
+                </div>
+
+                <div  style="height:auto;width=100%;display:flex; flex:1; flex-direction: row; flex-wrap: wrap; ">
+                    <!-- <div id="chartContainer0" style="height: 500px; width: 48%;"></div>  margin: 0px auto; -->
+                    <div id="chartContainer1" style="height: 500px; width: 100%;"></div>
+                  	<div  style="width:100%">
+                      <select onchange="q2(this.value)" ;margin-bottom: 100px; id= "medic_choice_div">
+                      </select>
+                    
+                    <div id="chartContainer2" style="height: 500px; width: 100%; ">
+                    
+                    </div>
+                     </div>
+                    <div id="chartContainer3" style="height: 500px; width: 48%;"></div>
+                    <div id="chartContainer4" style="height: 500px; width: 48%;"></div>
+                    <div  style="width:49%">
+                      <select onchange="q5(this.value)" ;margin-bottom: 100px; id= "proce_choice_div">
+                      </select>
+                    
+                     <div id="chartContainer5" style="height: 500px; width: 100%;">
+                       
+                    </div>
+                     </div>  
+                     <div style="width:49%">      
+                     <select onchange="q6(this.value)" ;margin-bottom: 100px; id= "condi_choice_div">
+                      </select>
+                                  
+                  	<div id="chartContainer6" style="height: 500px; width: 100%;"></div>
+                  </div>
+                    <div id="map" style="width: 100%; height: 400px;"></div>
+   	          
+                </div>
+
+    <script type="text/javascript">
+         async function q(){await q_proc(),await q1(),await q_medic(),await q3(), await q4(),await q_cond(), await q_maps()}
+         q()
+      
+    </script>
+
+</body>
+
+</html>
